@@ -1,0 +1,159 @@
+body {
+    background-color: rgb(184, 184, 184);
+
+    margin: 0;
+}
+
+/**/
+#menu {
+    position: fixed;
+    top: 2%;
+    height: 96%;
+    width: 10%;
+    background-color: rgb(39, 38, 41);
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.landscape #menu {
+    left: 0;
+    top: 5vh;
+    height: 90vh;
+    width: 20vh;
+    flex-direction: column;
+}
+.portrait #menu {
+    left: 5vw;
+    top: calc(100vh - 20vw);
+    height: 20vw;
+    width: 90vw;
+    flex-direction: row;
+}
+
+/*Menu Buttons*/
+.menuButton {
+    background-size: contain;
+}
+.landscape .menuButton {
+    width: 10vh;
+    height: 10vh;
+    margin: 5vh 5vh;
+}
+.portrait .menuButton {
+    width: 10vw;
+    height: 10vw;
+    margin: 5vw 5vw;
+}
+
+.menuButton:hover {
+    -webkit-filter: brightness(1.5);
+    filter: brightness(1.5);
+}
+
+#grabButton {
+    background-image: url("grabIcon.png");
+}
+#grabButton.selectedTool {
+    background-image: url("grabIconSelected.png");
+}
+
+#drawButton {
+    background-image: url("drawIcon.png");
+}
+#drawButton.selectedTool {
+    background-image: url("drawIconSelected.png");
+}
+
+#eraseButton {
+    background-image: url("eraseIcon.png");
+}
+#eraseButton.selectedTool {
+    background-image: url("eraseIconSelected.png");
+}
+
+
+/*Cursor*/
+#cursor {
+    position: absolute;
+    pointer-events: none;
+}
+
+.landscape #cursor {
+    height: 4.5vh;
+    width: 4.5vh;
+}
+
+.portrait #cursor {
+    height: 4.5vw;
+    width: 4.5vw;
+}
+
+#cursor.finder {
+    background-image: url("finder.png");
+    background-size: contain;
+}
+
+#cursor.flag {
+    background-image: url("flag.png");
+    background-size: contain;
+}
+
+
+/*World*/
+.world {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(29, 29, 29);
+
+    margin: 0;
+}
+
+#grid {
+    position: absolute;
+}
+.landscape #grid {
+    left: calc(50vw - 45vh);
+    top: 5vh;
+    height: 90vh;
+    width: 90vh;
+}
+.portrait #grid {
+    left: 5vw;
+    top: calc(50vh - 45vw);
+    height: 90vw;
+    width: 90vw;
+}
+
+.tile {
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(41, 41, 41);
+}
+
+.tile.pathTile {
+    background-color: rgb(91, 80, 97);
+}
+
+.tile.finder {
+    background-image: url("finder.png");
+    background-size: contain;
+}
+
+.tile.flag {
+    background-image: url("flag.png");
+    background-size: contain;
+}
+
+.tile.wall {
+    background-color: rgb(200, 200, 200);
+}
+
+.tile.invisible {
+    background-image: none;
+    background-color: none;
+}
